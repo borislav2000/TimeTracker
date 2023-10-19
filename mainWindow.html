@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RM Time Tracker (version 0.2.1)</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+    <script type="text/javascript" src="https://husa.github.io/timer.js/dist/timer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    
+</head>
+
+<body onload="listAllTasks()">
+    <div class="header">
+        <a href="#"><img src="rm-logo.png" alt="" height="40px" class="app-logo"></a>
+        <div class="burgerIcon" onclick="showDropdown()">
+            <div class="burgerBtn"></div>
+            <div class="burgerBtn"></div>
+            <div class="burgerBtn"></div>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#" onclick="openSettingsMenu()">Settings (BETA)</a>
+                <a href="#" onclick="openReportMenu()">Time Reporting (BETA)</a>
+                <a href="#" onclick="openRawReportMenu()">Time Reporting Raw (BETA)</a>
+
+                
+
+                <hr>
+                
+                <a href="#" onclick="closeMainWindow()">Exit</a>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="warning-msg">
+        Error: cannot connect to RM Time Tracker local database. Make sure SQLite3 is installed on your computer and RMTT.db exists.
+        <br>
+        <button class='exitBtn'  onclick="exitOnError()">EXIT</button>
+    </div>
+    <!-- <div class="tasksContainer">
+
+        <i class="fa fa-play stopAndStart" id="' + prevID + '" onclick="togglePause()"></i>
+    </div> -->
+    <!-- <div class="warning-msg"><i class="fa fa-warning"></i> Unaccounted Time
+        <br><p class="stepsMsg"><i>Please select a task from below to add your time to it.</i></p></br>
+        <span class=task>Unknown 1</span>
+         <button value="submit" class="moreBtn" onclick="addClickedClass()">More...</button> -->
+    <!-- </div> -->
+     <form id="taskInput">
+        <div class="input-group groupInputAndSumbit">
+            <input type="text" placeholder="What's up" id="myField" onkeyup="checkForEmptyInput(); filterTasks()" onfocusout="outOfFocus()">
+            <div class="submitBtn">
+                <button class="btn-primary confirmBtn" type="button">Add Task</button>
+            </div>
+        </div>
+     </form>
+    
+    <hr>
+    <div class='confirmAndMinimize' onclick="minimizeWindow()">
+        <p>Confirm / Hide</p>
+    </div>
+    <script type="text/javascript" src="renderer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/dist/easytimer.min.js"></script>
+
+
+</html>

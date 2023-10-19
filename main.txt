@@ -1,0 +1,114 @@
+//Modules
+const electron = require('electron');
+const url = require('url');
+const path = require('path');
+const trayIcon = path.join(__dirname, 'appLogo.jpg')
+const fs = require('fs');
+const os = require('os');
+const readLastLines = require('read-last-lines')
+
+//Getting the exact time(timeStamp)
+function addZero(i){
+    if(i < 10){
+        i = '0' + i;
+    }
+    return i;
+}
+var today = new Date();
+var date = today.getFullYear()+'-'+addZero((today.getMonth()+1))+'-'+addZero(today.getDate());
+var time = addZero(today.getHours()) + ":" + addZero(today.getMinutes()) + ":" + addZero(today.getSeconds());
+
+var lastLine = '';
+
+//Creating the content of the file
+var fileContent = date + " " + time;
+
+// The absolute path of the new file with its name
+var fileName = date + '_daily_report.txt';
+
+
+const{app, BrowserWindow, Tray, ipcMain} = require('electron');
+var tray = null;
+var mainWindow;
+
+//Listen for app to be ready
+app.on('ready', function(){
+
+    //Check if file is already created and append to it, else create new file.
+    //Catch the input from the textarea.
+    fs.access(fileName, (err) =>{
+        if (!err) {
+            ipcMain.on('addReportText', function(e, item) {
+                mainWindow.webContents.send('addReportText', item);
+                // mainWindow.close()
+                fs.appendFile(fileName, fileContent + "\t" + item + "\r\n", (err) => {
+                    if (err) {
+                        throw err;
+                    } else {
+                        console.log("The file was succesfully updated!");
+                    }
+                })
+            })
+        }
+        else{
+            ipcMain.on('addReportText', function(e, item) {
+                mainWindow.webContents.send('addReportText', item);
+            fs.writeFile(fileName, fileContent + "\t" + item + "\r\n", (err) => {
+            if (err) throw err;
+            console.log("The file was succesfully saved!");
+        }); 
+    })
+    }
+
+    //Add the tray icon on load
+    tray = new Tray(trayIcon)
+
+    //Create new window 
+    mainWindow = new BrowserWindow({
+       icon: __dirname + '/appLogo.jpg',
+       webPreferences: {
+           nodeIntegration: true
+       }
+    });
+    
+    //Load the HTML file into the window
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'mainWindow.html'),
+        protocol:'file:',
+        slashes: true
+    }))
+
+    //On minimize remove the icon from the taskbar and show only in the tray
+    mainWindow.on('minimize' ,function(){
+        mainWindow.setSkipTaskbar(true)
+        mainWindow.minimize();
+    })
+
+    //On double-click reopen the main window
+    tray.on('double-click', () =>{
+        mainWindow.show();
+    })
+
+    //On hover on the system tray icon this text appears
+    tray.setToolTip('System Tray Application Demo')
+
+    // array = fs.readFileSync(fileName).toString().split('\n')
+    // for(i in array){
+    //     console.log(array[i].split('\t'))
+    // }
+    
+    readLastLines.read(fileName, 2).then(function (lines) {
+
+        console.log(lines)
+        lastLine = lines
+
+    }).catch(function (err) {
+        console.log(err.message);
+        
+    });
+    mainWindow.webContents.executeJavaScript('console.log("'+lastLine+'")');
+})
+
+
+    })
+   

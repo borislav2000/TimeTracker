@@ -1,0 +1,14 @@
+{
+    "timeSettings": [  
+        {
+            "MainWindow_AutoShowAfterXMilliseconds_Default": 10000
+        },         
+        {
+            "MainWindow_MuteAutoShowForXMilliseconds_Default":0
+        },
+        {
+            "MainWindow_TimeToAutoPause": 60000
+        }
+        
+    ]
+  }

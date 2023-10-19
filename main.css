@@ -1,0 +1,573 @@
+/* Styling the whole page */
+html, body
+{
+  overflow-x: hidden;
+  resize: none;
+  background-color: #EFF4F7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling the logo and button section */
+.header
+{
+  height: 40px;
+}
+
+/* Styling the lines above and below the input field */
+hr
+{
+  border-color: #CACACA;
+  opacity: 0.2;
+}
+
+/* Styling the section with the input and submit button */
+.groupInputAndSumbit
+{
+  border: solid 1px #C6D2D9;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+/* Styling the input field */
+.groupInputAndSumbit input[type=text]
+{
+ 
+  width: 175px;
+  padding-right: 123px;
+  height:45px;
+}
+
+
+input[type=text]{
+  outline: none;
+  border: none;
+  border-color: transparent;
+  box-shadow: none;
+  text-indent: 10px;
+}
+
+/* Styling the position of the submit button */
+.groupInputAndSumbit .submitBtn
+{
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  z-index:9;
+}
+
+/* Styling the submit button */
+.confirmBtn
+{
+  height:40px;
+  width:120px;
+  background-color: #EF4823;
+  text-transform: uppercase;
+  color:white;
+  border: none; 
+  border-radius: 2px;
+  transition-duration: 0.3s;
+  font-size:13px;
+}
+
+/* Changing the background-color of hover on the submit button */
+.confirmBtn:hover
+{
+  background-color: #e03b1a;
+  cursor: pointer;
+}
+
+/*Styling the container which contains the entered tasks */
+.tasksContainer
+{
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 40px;
+  background-color: white;
+  border:1px solid #C6D2D9;
+  padding-left: 10px;
+  padding-top: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: sans-serif;
+  font-size: 14px;
+  position: relative;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+}
+
+.long-and-truncated{
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 80px;
+}
+
+.short-and-fixed > div {
+
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: inline-block;
+
+}
+
+
+/* Styling on hover the containers */
+.tasksContainer:hover{
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  z-index: 1;
+  overflow: visible;
+}
+
+.activeTask{
+  border: 2px solid #EF4823;
+}
+
+/* Styling the header above the tasks */
+.containerHeader
+{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 32px;
+  background-color:#E4EAEE;
+  color: #3F3F3F;
+  border:1px solid #C6D2D9;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-top: 12px;
+}
+
+/* Styling the logo */
+a img
+{
+  padding-left:20px;
+  padding-top: 5px;
+}
+
+/* Styling the burger-menu button */
+.burgerBtn{
+  width: 20px;
+  height: 3px;
+  background-color: transparent;
+  border: 1px solid gray;
+  margin: 3px 0;
+  border-radius: 2px;
+}
+
+/* Styling the burger icon div */
+.burgerIcon{
+  width: 20px;
+  float:right;
+  height:20px;
+  margin-right: 25px;
+  padding-top:8px;
+  cursor: pointer;
+}
+
+/* Styling the arrow */
+.arrow{
+  transform: rotate(90deg);
+  display: block;
+  float: right;
+  font-size: 30px;
+  margin-right: 25px;
+  margin-top: 5px;
+  color:rgba(128, 128, 128, 0.493);
+}
+
+/* Styling the arrow on hover to change its color */
+.arrow:hover{
+  color:#ef4823;
+  cursor: pointer;
+}
+
+/* Styling the dropdown menu */
+.dropdown-content{
+  display:none;
+  background-color: white;
+  overflow: auto;
+  z-index: 100;
+  position: absolute;
+  margin-right: 10px;
+  right: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: gray;
+  padding-top: 10px;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  padding-top: 30px;
+
+}
+
+/* Styling the items/links in the context menu */
+.dropdown-content a{
+  display: block;
+  text-decoration: none;
+  color:black;
+  margin-bottom: 20px;
+  /* text-transform: uppercase; */
+  font-family: sans-serif;
+  font-size: 14px;
+  color:gray;
+}
+
+/* On menu-item hover */
+.dropdown-content a:hover{
+  color:#ef4823;
+
+}
+
+/* Toggle the dropdown menu */
+.show{
+  display: block;
+}
+
+/* Play and pause icons */
+.myIcon{
+  margin-right: 5px;
+  font-size: 18px;
+  
+}
+
+.startIcon{
+  color: rgba(128, 128, 128, 0.568);
+}
+
+.startBtn{
+  color:rgba(128, 128, 128, 0.623);
+  font-size: 18px;
+  float:right;
+  margin-right: 20px;
+}
+
+.startBtn:hover{
+  cursor:pointer;
+  color:#32a3e5;
+}
+
+/* Style the play/pause icon */
+.stopAndStart{
+  color:rgba(128, 128, 128, 0.452);
+  float: right;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+/* On hover play/pause icon */
+.playHover:hover{
+  color:#ef4823;
+  cursor:pointer;
+}
+
+/* Active play/pause icon */
+.selected{
+  color: #ef4823;
+}
+
+/* Style the current task header section */
+.currentHeader
+{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 32px;
+  background-color: rgba(219, 214, 214, 0.425);
+  opacity: 0.8;
+  border:1px solid rgba(80, 77, 77, 0.171);
+  font-size: 16px;
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-top: 12px;
+}
+
+/* Styling the submit button */
+#minimizeBtn
+{
+  height:50px;
+  width:120px;
+  background-color: #32e55f;
+  text-transform: uppercase;
+  color:white;
+  border: none;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  transition-duration: 0.3s
+
+}
+
+#minimizeBtn:hover{
+  background-color: #00c230;
+  cursor: pointer;
+}
+
+/* width scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track scrollbar */
+::-webkit-scrollbar-track {
+  background: lightgray; 
+}
+
+/* Handle scrollblar */
+::-webkit-scrollbar-thumb {
+  background: #EF4823; 
+}
+
+/* Style the timer */
+.mySpan{
+  right: 40px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  position: absolute;
+  bottom:8px;
+  visibility:hidden;
+}
+
+/* Styling the checkbox field */
+#checkBoxField{
+  border: 1px solid rgba(63, 63, 63, 0.3);
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 90px;
+  background-color: white;
+  display: none;
+  
+}
+
+/* Style the checkboxes which are ont the right side */
+#moveRight{
+  position: relative;
+  left: 120px;
+  bottom:87px;
+}
+
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  margin-left: 5px;
+  margin-top: 7px;
+  font-family: sans-serif;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #ef4823;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.warning-msg{
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #CC3333;
+  color: white;
+  font-family: sans-serif;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  position: relative;
+  height: 90px;
+  font-size:14px;
+  display:none;
+}
+
+.moreBtn{
+  right: 5px;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 0.5px;
+  border:none;
+  padding:5px;
+  text-align: center;
+  position: absolute;
+  font-family: sans-serif;
+  transition-duration: 0.3s;
+  display:none; 
+}
+
+.moreBtn:hover{
+  background-color: #bcbaba; 
+}
+
+.uacTasks{
+  border:1px solid rgba(63, 63, 63, 0.308);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  display: none;
+}
+
+.add{
+  float: right;
+  margin-right: 5px;
+  border: none;
+  background-color: #ef4823;
+  color:white;
+  padding: 6px;
+  margin-top: 2px;
+  top: 73px;
+  right: 2px;
+  position: absolute;
+  font-size: 10px;
+}
+
+.add:hover{
+  background-color: #e03b1a;
+}
+
+.task{
+  margin-left: 5px;
+  /* margin-top: 30px; */
+  display:block;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.stepsMsg{
+  font-size: 11px;
+  color:black;
+}
+
+.exitBtn{
+  float:right;
+  background-color:white;
+  border: none;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.inputBorder{
+  border: 1px solid red;
+}
+
+.removeBorder{
+  border: none;
+}
+
+/* .cutText{
+  overflow: hidden;
+  text-overflow: ellipsis; 
+} */
+
+span{
+  /* text-overflow: ellipsis; */
+  display: inline-block;
+  /* width: 180px;
+  overflow: hidden;     
+  white-space: nowrap;
+  max-width: 350px; */
+}
+
+i{
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.confirmAndMinimize{
+  background-color: #ef4823;
+  margin-left:20px;
+  margin-right: 20px;
+  display:none;
+  height: 40px;
+  vertical-align: middle;
+
+}
+ p{
+  color:white;
+  text-align: center;
+  margin:0;
+  vertical-align: middle;
+  line-height: 35px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.confirmAndMinimize:hover{
+  background-color: #e03b1a;
+  cursor: pointer;
+}
+
+.menuText{
+  
+  color: gray;
+    text-transform: initial;
+    margin-bottom: 10px;
+}
+
+a{
+  text-decoration: none;
+}

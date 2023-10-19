@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raw Report (BETA)</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript" src="rawReport.js"></script>
+    <link rel="stylesheet" type=text/css href="rawReport.css">
+</head>
+<body onload="renderRawReport()">
+    <div class="header">Raw Reports
+        <!-- <button class="copy-btn" onclick="myFunction()" onmouseout="outFunc()">Copy</button> -->
+        <!-- <span class="tooltiptext" id="myTooltip">Copy to clipboard</span> -->
+        
+    </div>
+    <div class="tooltip">
+            <button onclick="myFunction()" onmouseout="outFunc()" class="copy-btn">
+                    <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    Copy text
+            </button>
+    </div>
+    <textarea name="" id="myArea" cols="140" rows="10" class="rawReportArea"></textarea>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "desktop-app-project",
+  "version": "1.0.0",
+  "description": "Desktop App Demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.rmtt_app",
+    "productName": "RM_TimeTracker"
+  },
+  "author": "Borislav Dobrev",
+  "license": "ISC",
+  "dependencies": {
+    "datatables": "^1.10.18",
+    "datatables.net": "^1.10.19",
+    "datatables.net-dt": "^1.10.19",
+    "easytimer.js": "^4.0.1",
+    "electron": "^5.0.2",
+    "electron-complete-builder": "^0.7.0",
+    "electron-positioner": "^4.1.0",
+    "hh-mm-ss": "^1.2.0",
+    "list.js": "^1.5.0",
+    "node-cmd": "^3.0.0",
+    "read-package-json": "^2.1.0",
+    "sqlite3": "^4.1.0",
+    "timer.js": "^1.0.4"
+  },
+  "devDependencies": {
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.0.0",
+    "electron-wix-msi": "^2.1.1"
+  }
+}
